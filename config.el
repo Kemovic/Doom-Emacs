@@ -60,3 +60,5 @@
 (add-hook 'ng2-mode-hook #'lsp!)
 (add-hook 'ng2-html-mode-hook #'lsp!)
 (add-hook 'ng2-ts-mode-hook #'lsp!)
+(exec-path-from-shell-copy-env "SSH_AGENT_PID")
+(exec-path-from-shell-copy-env "SSH_AUTH_SOCK")
