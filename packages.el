@@ -53,5 +53,8 @@
 (package! exwm)
 (package! ng2-mode)
 (package! exec-path-from-shell)
+(package! nov)
+(package! magit-section)
+(package! lsp-java)
 ;;(exec-path-from-shell-copy-env "SSH_AGENT_PID")
 ;;(exec-path-from-shell-copy-env "SSH_AUTH_SOCK")

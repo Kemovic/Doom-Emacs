@@ -62,3 +62,7 @@
 (add-hook 'ng2-ts-mode-hook #'lsp!)
 (exec-path-from-shell-copy-env "SSH_AGENT_PID")
 (exec-path-from-shell-copy-env "SSH_AUTH_SOCK")
+(use-package! nov
+  :mode ("\\.epub\\'" . nov-mode)
+  :config
+  (setq nov-save-place-file (concat doom-cache-dir "nov-places")))
