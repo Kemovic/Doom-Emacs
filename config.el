@@ -66,3 +66,17 @@
   :mode ("\\.epub\\'" . nov-mode)
   :config
   (setq nov-save-place-file (concat doom-cache-dir "nov-places")))
+;;Eglot
+(require 'eglot)
+(add-to-list 'eglot-server-programs '((c++-mode c-mode) "clangd"))
+(add-hook 'c-mode-hook 'eglot-ensure)
+(add-hook 'c++-mode-hook 'eglot-ensure)
+(defconst my-eclipse-jdt-home "/home/kemovic/.emacs.d/.local/etc/.cache/lsp/eclipse.jdt.ls/plugins/org.eclipse.equinox.launcher_1.6.100.v20201223-0822.jar")
+(defun my-eglot-eclipse-jdt-contact (interactive)
+  "Contact with the jdt server input INTERACTIVE."
+  (let ((cp (getenv "CLASSPATH")))
+    (setenv "CLASSPATH" (concat cp ":" my-eclipse-jdt-home))
+    (unwind-protect (eglot--eclipse-jdt-contact nil)
+      (setenv "CLASSPATH" cp))))
+(setcdr (assq 'java-mode eglot-server-programs) #'my-eglot-eclipse-jdt-contact)
+(add-hook 'java-mode-hook 'eglot-ensure)

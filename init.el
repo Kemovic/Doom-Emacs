@@ -93,7 +93,8 @@
        (eval +overlay)     ; run code, run (also, repls)
        ;;gist              ; interacting with github gists
        lookup              ; navigate your code and its documentation
-       (lsp +peek)
+       (lsp +eglot )
+
        (magit +forge)              ; a git porcelain for Emacs
        make              ; run make tasks from Emacs
        ;;pass              ; password manager for nerds
@@ -119,7 +120,7 @@
        ;;crystal           ; ruby at the speed of c
        (csharp +dotnet +lsp)            ; unity, .NET, and mono shenanigans
        data              ; config/data formats
-       (dart +flutter +lsp)   ; paint ui and not much else
+       ;;(dart +flutter +lsp)   ; paint ui and not much else
        ;;elixir            ; erlang done right
        ;;elm               ; care for a cup of TEA?
        emacs-lisp        ; drown in parentheses
@@ -162,7 +163,7 @@
        ;;php               ; perl's insecure younger brother
        ;;plantuml          ; diagrams for confusing people more
        ;;purescript        ; javascript, but functional
-       (python +lsp +pyright)            ; beautiful is better than ugly
+       (python +lsp +pyls)            ; beautiful is better than ugly
        ;;qt                ; the 'cutest' gui framework ever
        ;;racket            ; a DSL for DSLs
        ;;raku              ; the artist formerly known as perl6
