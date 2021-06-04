@@ -57,6 +57,5 @@
 (package! magit-section)
 (package! lsp-java)
 (package! eglot)
-(package! eglot-jl)
-;;(exec-path-from-shell-copy-env "SSH_AGENT_PID")
-;;(exec-path-from-shell-copy-env "SSH_AUTH_SOCK")
+(exec-path-from-shell-copy-env "SSH_AGENT_PID")
+(exec-path-from-shell-copy-env "SSH_AUTH_SOCK")
