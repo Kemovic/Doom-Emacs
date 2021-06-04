@@ -62,10 +62,6 @@
 (add-hook 'ng2-ts-mode-hook #'lsp!)
 (exec-path-from-shell-copy-env "SSH_AGENT_PID")
 (exec-path-from-shell-copy-env "SSH_AUTH_SOCK")
-(use-package! nov
-  :mode ("\\.epub\\'" . nov-mode)
-  :config
-  (setq nov-save-place-file (concat doom-cache-dir "nov-places")))
 ;;Eglot
 (require 'eglot)
 (add-to-list 'eglot-server-programs '((c++-mode c-mode) "clangd"))
@@ -80,3 +76,4 @@
       (setenv "CLASSPATH" cp))))
 (setcdr (assq 'java-mode eglot-server-programs) #'my-eglot-eclipse-jdt-contact)
 (add-hook 'java-mode-hook 'eglot-ensure)
+(setq eglot-jl-language-server-project "~/.julia/environments/v1.6")
